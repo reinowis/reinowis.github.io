@@ -4,7 +4,7 @@ email: maihuynh16995@gmail.com
 phone: (+84) 946 607 797
 description: Huynh (Reino) Mai, a front-end developer, based in HCMC, Vietnam.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://reinowis.gtihub.io" # the base hostname & protocol for your site
+url: "https://reinowis.github.io" # the base hostname & protocol for your site
 
 # Social settings
 500px_url:
