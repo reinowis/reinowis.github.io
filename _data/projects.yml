@@ -1,0 +1,40 @@
+- image: "assets/img/portfolio/5.png"
+  title: PtEverywhere
+  link: https://cameraelectronic.com.au
+  type: app
+  description:
+    languages: HTML/CSS, AngularJS
+    platform: AngularJS
+    note: Managing Private Clinics App
+- image: "assets/img/portfolio/1.png"
+  title: Camera Electronic
+  link: https://cameraelectronic.com.au
+  type: web
+  description:
+    languages: HTML/CSS, Jquery
+    platform: Neto CMS
+    note: E-commerce website
+- image: "assets/img/portfolio/2.png"
+  title: Freestyle Libre Australia
+  link: https://freestylelibre.com.au
+  type: web
+  description:
+    languages: HTML/CSS, Jquery
+    platform: Neto CMS
+    note: E-commerce website
+- image: "assets/img/portfolio/3.png"
+  title: MedQuarters
+  link: https://medquarters.com.au
+  type: web
+  description:
+    languages: HTML/SCSS, Javascript ES6
+    platform: BigCommerce
+    note: E-commerce website
+- image: "assets/img/portfolio/4.png"
+  title: Unicons Vietnam
+  link: https://unicons.vn/
+  type: web
+  description:
+    languages: PHP, HTML/CSS, Jquery
+    platform: Wordpress
+    note: 'portfolio website for a Vietnamese construction company '

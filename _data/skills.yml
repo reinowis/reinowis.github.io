@@ -1,0 +1,24 @@
+- icon: create-outline
+  title: Front-end
+  detail:
+    - HTML/CSS/JS
+    - AngularJS
+    - Wordpress
+- icon: code-slash-outline
+  title: Back-end
+  detail:
+    - PHP
+    - Python
+    - MySQL
+- icon: hammer-outline
+  title: Others
+  detail:
+    - Adobe Suite (Photoshop, Illustartor, XD)
+    - Sketch
+    - Figma
+- icon: language-outline
+  title: Language
+  detail:
+    - Vietnamese (Mother tounge)
+    - English (Advanced)
+    - Chinese (Basic)

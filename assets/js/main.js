@@ -1,219 +1,142 @@
-/*
-	Highlights by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+/**
+* Template Name: Folio - v2.2.0
+* Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
 */
-
 (function($) {
-
-	skel.breakpoints({
-		large: '(max-width: 1680px)',
-		medium: '(max-width: 980px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)'
+	"use strict";
+  
+	// Smooth scroll for the navigation menu and links with .scrollto classes
+	var scrolltoOffset = $('#main-nav').outerHeight() - 1;
+	$(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
+	  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+		var target = $(this.hash);
+		if (target.length) {
+		  e.preventDefault();
+  
+		  var scrollto = target.offset().top - scrolltoOffset;
+  
+		  $('html, body').animate({
+			scrollTop: scrollto
+		  }, 1500, 'easeInOutExpo');
+  
+		  if (window.matchMedia("(max-width:991px)").matches) {
+			$('.nav-menu').hide();
+		  }
+		  return false;
+		}
+	  }
 	});
-
+  
+	// Activate smooth scroll on page load with hash links in the url
+	$(document).ready(function() {
+	  if (window.location.hash) {
+		var initial_nav = window.location.hash;
+		if ($(initial_nav).length) {
+		  var scrollto = $(initial_nav).offset().top - scrolltoOffset;
+		  $('html, body').animate({
+			scrollTop: scrollto
+		  }, 1500, 'easeInOutExpo');
+		}
+	  }
+	});
+  
+	// ========================================================================= //
+	//  //NAVBAR SHOW - HIDE
+	// ========================================================================= //
+  
+	$(window).scroll(function() {
+	  var scroll = $(window).scrollTop();
+	  if (!$('.subpage-nav').length) {
+		if (scroll > 200) {
+		  $("#main-nav").slideDown(700);
+		} else {
+		  $("#main-nav").slideUp(700);
+		}
+	  }
+	});
+  
+	// ========================================================================= //
+	//  // RESPONSIVE MENU
+	// ========================================================================= //
+  
+	$('.responsive').on('click', function(e) {
+	  $('.nav-menu').slideToggle();
+	});
+  
+	// ========================================================================= //
+	//  Typed Js
+	// ========================================================================= //
+  
+	var typed = $(".typed");
+  
 	$(function() {
-
-		var	$window = $(window),
-			$body = $('body'),
-			$html = $('html');
-
-		// Disable animations/transitions until the page has loaded.
-			$html.addClass('is-loading');
-
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$html.removeClass('is-loading');
-				}, 0);
-			});
-
-		// Touch mode.
-			if (skel.vars.mobile) {
-
-				var $wrapper;
-
-				// Create wrapper.
-					$body.wrapInner('<div id="wrapper" />');
-					$wrapper = $('#wrapper');
-
-					// Hack: iOS vh bug.
-						if (skel.vars.os == 'ios')
-							$wrapper
-								.css('margin-top', -25)
-								.css('padding-bottom', 25);
-
-					// Pass scroll event to window.
-						$wrapper.on('scroll', function() {
-							$window.trigger('scroll');
-						});
-
-				// Scrolly.
-					$window.on('load.hl_scrolly', function() {
-
-						$('.scrolly').scrolly({
-							speed: 1500,
-							parent: $wrapper,
-							pollOnce: true
-						});
-
-						$window.off('load.hl_scrolly');
-
-					});
-
-				// Enable touch mode.
-					$html.addClass('is-touch');
-
-			}
-			else {
-
-				// Scrolly.
-					$('.scrolly').scrolly({
-						speed: 1500
-					});
-
-			}
-
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
-
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
-
-		// Header.
-			var $header = $('#header'),
-				$headerTitle = $header.find('header'),
-				$headerContainer = $header.find('.container');
-
-			// Make title fixed.
-				if (!skel.vars.mobile) {
-
-					$window.on('load.hl_headerTitle', function() {
-
-						skel.on('-medium !medium', function() {
-
-							$headerTitle
-								.css('position', 'fixed')
-								.css('height', 'auto')
-								.css('top', '50%')
-								.css('left', '0')
-								.css('width', '100%')
-								.css('margin-top', ($headerTitle.outerHeight() / -2));
-
-						});
-
-						skel.on('+medium', function() {
-
-							$headerTitle
-								.css('position', '')
-								.css('height', '')
-								.css('top', '')
-								.css('left', '')
-								.css('width', '')
-								.css('margin-top', '');
-
-						});
-
-						$window.off('load.hl_headerTitle');
-
-					});
-
-				}
-
-			// Scrollex.
-				skel.on('-small !small', function() {
-					$header.scrollex({
-						terminate: function() {
-
-							$headerTitle.css('opacity', '');
-
-						},
-						scroll: function(progress) {
-
-							// Fade out title as user scrolls down.
-								if (progress > 0.5)
-									x = 1 - progress;
-								else
-									x = progress;
-
-								$headerTitle.css('opacity', Math.max(0, Math.min(1, x * 2)));
-
-						}
-					});
-				});
-
-				skel.on('+small', function() {
-
-					$header.unscrollex();
-
-				});
-
-		// Main sections.
-			$('.main').each(function() {
-
-				var $this = $(this),
-					$primaryImg = $this.find('.image.primary > img'),
-					$bg,
-					options;
-
-				// No primary image? Bail.
-					if ($primaryImg.length == 0)
-						return;
-
-				// Hack: IE8 fallback.
-					if (skel.vars.IEVersion < 9) {
-
-						$this
-							.css('background-image', 'url("' + $primaryImg.attr('src') + '")')
-							.css('-ms-behavior', 'url("assets/css/ie/backgroundsize.min.htc")');
-
-						return;
-
-					}
-
-				// Create bg and append it to body.
-					$bg = $('<div class="main-bg" id="' + $this.attr('id') + '-bg"></div>')
-						.css('background-image', (
-							'url("assets/css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
-						))
-						.appendTo($body);
-
-				// Scrollex.
-					options = {
-						mode: 'middle',
-						delay: 200,
-						top: '-10vh',
-						bottom: '-10vh'
-					};
-
-					if (skel.canUse('transition')) {
-
-						options.init = function() { $bg.removeClass('active'); };
-						options.enter = function() { $bg.addClass('active'); };
-						options.leave = function() { $bg.removeClass('active'); };
-
-					}
-					else {
-
-						$bg
-							.css('opacity', 1)
-							.hide();
-
-						options.init = function() { $bg.fadeOut(0); };
-						options.enter = function() { $bg.fadeIn(400); };
-						options.leave = function() { $bg.fadeOut(400); };
-
-					}
-
-					$this.scrollex(options);
-
-			});
-
+	  var strings = $('.typed-items').text();
+	  strings = $('.typed-items').data('typed-person') + ',' + strings;
+	  strings = strings.split(',');
+  
+	  typed.typed({
+		strings: strings,
+		typeSpeed: 100,
+		loop: true,
+	  });
 	});
-
-})(jQuery);
+   
+	// ========================================================================= //
+	//  Owl Carousel skills
+	// ========================================================================= //
+  
+	$('.skills-carousel').owlCarousel({
+	  autoplay: true,
+	  loop: true,
+	  margin: 20,
+	  dots: true,
+	  nav: false,
+	  responsiveClass: true,
+	  responsive: {
+		0: {
+		  items: 1
+		},
+		768: {
+		  items: 2
+		},
+		900: {
+		  items: 4
+		}
+	  }
+	});
+  
+	// ========================================================================= //
+	//  Porfolio isotope and filter
+	// ========================================================================= //
+	$(window).on('load', function() {
+	  var portfolioIsotope = $('.portfolio-container').isotope({
+		itemSelector: '.portfolio-item',
+		layoutMode: 'fitRows'
+	  });
+  
+	  $('#portfolio-flters li').on('click', function() {
+		$("#portfolio-flters li").removeClass('filter-active');
+		$(this).addClass('filter-active');
+  
+		portfolioIsotope.isotope({
+		  filter: $(this).data('filter')
+		});
+	  });
+	});
+  
+	// Initiate venobox (lightbox feature used in portofilo)
+	$(document).ready(function() {
+	  $('.venobox').venobox();
+	});
+  
+	// Portfolio details carousel
+	$(".portfolio-details-carousel").owlCarousel({
+	  autoplay: true,
+	  dots: true,
+	  loop: true,
+	  items: 1
+	});
+  
+  })(jQuery);
