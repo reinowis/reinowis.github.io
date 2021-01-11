@@ -351,12 +351,18 @@ List of Portfolio
             transition: all ease-in-out 0.3s;
             background: rgba(255, 255, 255, 0.9);
             padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
         }
         &__title{
             font-size: 18px;
             color: $color-text-third;
             font-weight: 600;
-            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &__description{
             color: $color-text-second;
@@ -365,14 +371,17 @@ List of Portfolio
             padding: 0;
         }
         &__link{
-            position: absolute;
-            right: 40px;
-            font-size: 24px;
-            top: calc(50% - 18px);
-            color: $color-text-second;
-            &:hover {
-                color: $color-hover;
+            display: flex;
+            align-items: center;
+            &__text{
+                font-size: 24px;
+                color: $color-text-second;
+                margin: 0px 0.25rem;
+                &:hover {
+                    color: $color-hover;
+                }
             }
+            
         }
         &:hover {
             filter: none;

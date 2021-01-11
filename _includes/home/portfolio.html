@@ -20,8 +20,14 @@
           <img src="{{ project.image | relative_url }}" class="img-fluid portfolio-list__item__image" alt="">
           <div class="portfolio-list__item__content">
             <h4 class="portfolio-list__item__title">{{project.title}}</h4>
-            <a href="{{ project.image | relative_url }}" data-gall="portfolioGallery" class="venobox portfolio-list__item__link" title="{{project.title}}"><i class="bx bx-plus"></i></a>
-            <a href="{{project.url}}" class="portfolio-list__item__link" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="portfolio-list__item__link">
+              <a href="{{ project.image | relative_url }}" data-gall="portfolioGallery" class="portfolio-list__item__link__text" title="{{project.title}}">
+                <ion-icon name="add-outline"></ion-icon>
+              </a>
+              <a href="{{project.url}}" class="portfolio-list__item__link__text" title="More Details">
+                <ion-icon name="link-outline"></ion-icon>
+              </a>
+            </div>
           </div>
         </div>
         {%- endfor -%}
