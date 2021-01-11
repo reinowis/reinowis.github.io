@@ -9,7 +9,7 @@
 /* main content */
 
 .main-content {
-    background: #f7f7f7;
+    background: $color-bg-second;
 
     .container-main {
         display: inline-block;
@@ -34,11 +34,11 @@
     line-height: 24px;
     margin: 0 0 13px 0;
     font-weight: 500;
-    color: #292929;
+    color: $color-text-main;
     transition: all 0.5s ease-in-out 0s;
 
     &:hover {
-        color: #999999;
+        color: $color-text-second;
         transition: all 0.5s ease-in-out 0s;
     }
 }
@@ -92,14 +92,14 @@
 .entry-comments-author {
     margin-right: 10px;
     font-size: 13px;
-    color: #292929;
+    color: $color-text-main;
     letter-spacing: 0.1em;
     font-weight: 500;
 }
 
 .rep {
     font-size: 13px;
-    color: #292929;
+    color: $color-text-main;
     letter-spacing: 0.1em;
     font-weight: 500;
     text-transform: capitalize;
@@ -107,7 +107,7 @@
 
 .entry-comments span a {
     font-size: 13px;
-    color: #999;
+    color: $color-text-second;
 }
 
 .entry-comments-reply {
@@ -125,7 +125,7 @@ blockquote {
     background-color: #f2f2f2;
     margin: 30px 0;
     border: none;
-    border-left: 4px solid #999999;
+    border-left: 4px solid $color-text-second;
 }
 
 /*--------------------------------------------------------------

@@ -1,5 +1,6 @@
 # Site settings
 title: Huynh (Reino) Mai - a front-end developer
+fullnam: Huynh (Reino) Mai
 email: maihuynh16995@gmail.com
 phone: (+84) 946 607 797
 description: Huynh (Reino) Mai, a front-end developer, based in HCMC, Vietnam.
@@ -22,3 +23,14 @@ slack_url:
 markdown: kramdown
 sass:
     sass_dir: _sass
+collections:
+    portfolio:
+        output: true
+        permalink: /portfolio/:name
+        layout: portfolio
+defaults:
+    -   scope:
+            path: ""
+            type: "portfolio"
+        values:
+            layout: "portfolio"

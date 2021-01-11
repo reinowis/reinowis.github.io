@@ -1,0 +1,19 @@
+<div id="skills" class="skill-list__wrapper">
+    <div class="container">
+        <div class="skill-list owl-theme">
+            {%- for skill in site.data.skills -%}
+            <div class="skill-list__item">
+                <ion-icon class="skill-list__item__icon" name="{{skill.icon}}"></ion-icon>
+                <span class="skill-list__item__title">{{skill.title}}</span>
+                <div class="skill-list__item__separator">
+                    <ul class="skill-list__item__content">
+                        {%- for item in skill.detail -%}
+                            <li class="skill-list__item__content__item">{{item}}</li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>

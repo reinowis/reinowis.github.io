@@ -87,7 +87,7 @@
 	//  Owl Carousel skills
 	// ========================================================================= //
   
-	$('.skills-carousel').owlCarousel({
+	$('.skill-list').owlCarousel({
 	  autoplay: true,
 	  loop: true,
 	  margin: 20,

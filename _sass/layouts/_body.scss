@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  background: #ffffff;
+  background: $color-bg-main;
   color: #898989;
   font-family: 'Poppins', helvetica;
   font-size: 15px;
@@ -24,64 +24,15 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
 
-h2 {
-  color: #292929;
-  font-weight: 600;
-}
-
-h4 {
-  color: #292929;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-a {
-  color: #292929;
-  text-decoration: none !important;
-  transition: all 0.5s ease-in-out 0s;
-}
-
-a:hover {
-  transition: all 0.5s ease-in-out 0s;
-}
-
-a:hover, a:focus {
-  color: #999999;
-  text-decoration: underline;
-}
-
-nav ul li a {
-  padding: 2px 0 0 0;
-  position: relative;
-  display: block;
-  font-size: 12px;
-  color: #999999;
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  line-height: 14px;
-  text-transform: uppercase;
-  transition: all 0.5s ease-in-out 0s;
-}
-
-p {
-  margin: 25px 0;
-  padding: 0;
-  font-size: 15px;
-  color: #999999;
-  line-height: 28px;
-}
 
 ::-moz-selection {
-  background: #999999;
+  background: $color-text-second;
   color: #fff;
 }
 
 ::selection {
-  background: #999999;
+  background: $color-text-second;
   color: #fff;
 }
 
@@ -105,52 +56,15 @@ p {
   padding: 30px 20px;
 }
 
-.section-title {
-  margin-bottom: 70px;
-}
 
-.section-title h2 {
-  font-size: 25px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
 
-.form-control {
-  background-color: transparent;
-  border: 1px solid #999;
-  border-radius: 0;
-  color: #999999;
-  font-size: 12px;
-  font-weight: 500;
-  height: 50px;
-  letter-spacing: 0.1em;
-  padding-left: 10px;
-  margin: 0 0 25px 0;
-  line-height: 14px;
-  text-transform: uppercase;
-}
-
-.form-control:focus {
-  box-shadow: none;
-  outline: 0 none;
-}
-
-.paddsection {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
-.paddsections {
-  padding-top: 90px;
-  padding-bottom: 90px !important;
-}
 
 .hvr-shutter-in-horizontal::before {
   background: #333;
 }
 
 .hvr-shutter-in-horizontal:hover {
-  background: #999999;
+  background: $color-text-second;
 }
 
 .mb-30 {
@@ -163,51 +77,6 @@ p {
 
 
 
-/*--------------------------------------------------------------
-# Hero
---------------------------------------------------------------*/
-#hero {
-  background: url("../img/home-bg.jpg") repeat scroll center center/cover;
-  height: 100vh;
-  width: 100%;
-}
-
-#hero .hero-content {
-  height: 100vh;
-  text-align: left;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.hero-content h1 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.hero-content p {
-  font-size: 13px;
-  letter-spacing: 3px;
-  margin-top: 0;
-  margin-bottom: 30px;
-  text-transform: capitalize;
-  color: #fff;
-  font-weight: 500;
-}
-
-.hero-content .list-social li {
-  float: left;
-  margin-right: 20px;
-}
-
-.hero-content .list-social li ion-icon {
-  color: #fff;
-  font-size: 15px;
-}
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -386,7 +255,7 @@ p {
     float: none;
     width: 100%;
     text-align: center;
-    border-top: 1px solid #f7f7f7;
+    border-top: 1px solid $color-bg-second;
     line-height: 45px;
     margin-left: 0;
     padding-top: 10px;
@@ -456,7 +325,7 @@ p {
     float: none;
     width: 100%;
     text-align: center;
-    border-top: 1px solid #f7f7f7;
+    border-top: 1px solid $color-bg-second;
     line-height: 45px;
     margin-left: 0;
     padding-top: 10px;
@@ -526,7 +395,7 @@ p {
     float: none;
     width: 100%;
     text-align: center;
-    border-top: 1px solid #f7f7f7;
+    border-top: 1px solid $color-bg-second;
     line-height: 45px;
     margin-left: 0;
     padding-top: 10px;
@@ -596,7 +465,7 @@ p {
     float: none;
     width: 100%;
     text-align: center;
-    border-top: 1px solid #f7f7f7;
+    border-top: 1px solid $color-bg-second;
     line-height: 45px;
     margin-left: 0;
     padding-top: 10px;
@@ -665,7 +534,7 @@ p {
     float: none;
     width: 100%;
     text-align: center;
-    border-top: 1px solid #f7f7f7;
+    border-top: 1px solid $color-bg-second;
     line-height: 45px;
     margin-left: 0;
     padding-top: 10px;

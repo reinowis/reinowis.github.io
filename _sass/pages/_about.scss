@@ -4,13 +4,13 @@
 #about {
     width: 100%;
     height: auto;
-    background: #f7f7f7;
+    background: $color-bg-second;
     padding-top: 120px;
   }
   
   #about .div-img-bg {
     padding-bottom: 30px;
-    border: 20px solid #999999;
+    border: 20px solid $color-text-second;
   }
   
   #about .div-img-bg .about-img img {

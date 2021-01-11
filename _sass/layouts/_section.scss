@@ -1,7 +1,20 @@
 .section{
+    background: $color-bg-main;
+    &__title {
+        margin-bottom: 70px;
+        h2{
+            font-size: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    }
     &--dark{
-        background: #f7f7f7;
+        background: $color-bg-second;
         padding-top: 120px;
         padding-bottom: 120px;
+    }
+    &--padding {
+        padding-top: 90px;
+        padding-bottom: 90px;
     }
 }
