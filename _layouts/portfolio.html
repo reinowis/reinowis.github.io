@@ -5,44 +5,47 @@ layout: default
   <!-- ======= Breadcrumbs Section ======= -->
   <section class="breadcrumbs">
     <div class="container">
-
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Portfolio Details</h2>
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li>Portfolio Details</li>
+        <h2 class="breadcrumbs__title">Portfolio Details</h2>
+        <ol class="breadcrumbs__list">
+          <li class="breadcrumbs__list__item"><a href="{{ index.html | realative_url}}">Home</a></li>
+          <li class="breadcrumbs__list__item"><a href="{{ portfolio.html | realative_url}}">Portfolio</a></li>
+          <li class="breadcrumbs__list__item">Portfolio Details</li>
         </ol>
       </div>
 
     </div>
-  </section><!-- Breadcrumbs Section -->
+  </section>
+  <!-- Breadcrumbs Section -->
 
   <!-- ======= Portfolio Details Section ======= -->
-  <section class="portfolio-details">
+  <section class="portfolio-detail">
     <div class="container">
+      <div class="portfolio-detail__wrapper">
 
-      <div class="portfolio-details-container">
-
-        <div class="owl-carousel portfolio-details-carousel">
-          <img src="{{page.image | relative_url}}" class="img-fluid" alt="">
+        <div class="owl-carousel portfolio-detail__carousel">
+          <img src="{{page.image | relative_url}}" class="img-fluid portfolio-detail__image" alt="{{page.title}} -image">
+          {%- if page.gallery -%}
+          {%- for img in pgae.gallery -%}
+          <img src="{{img | relative_url}}" class="img-fluid portfolio-detail__image" alt="{{page.title}} - images">
+          {%- endfor -%}
+          {%- endif -%}
         </div>
 
-        <div class="portfolio-info">
+        <div class="portfolio-detail__info">
           <h3>Project information</h3>
-          <ul>
-            <li><strong>Category</strong>: {{page.note}}</li>
-            <li><strong>Client</strong>: ASU Company</li>
-            <li><strong>Project date</strong>: {{page.time}}</li>
-            <li><strong>Project URL</strong>: <a href="{{page.link}}">page.link</a></li>
+          <ul class="portfolio-detail__list">
+            <li class="portfolio-detail__list__item"><strong>Category</strong>: {{page.note}}</li>
+            <li class="portfolio-detail__list__item"><strong>Project date</strong>: {{page.time}}</li>
+            <li class="portfolio-detail__list__item"><strong>Project URL</strong>: <a href="{{page.link}}">page.link</a></li>
           </ul>
         </div>
 
       </div>
 
-      <div class="portfolio-description">
-        <h2>{{page.title}}</h2>
-        <p>
+      <div class="portfolio-detail__content">
+        <h2 class="portfolio-detail__title">{{page.title}}</h2>
+        <p class="portfolio-detail__description">
           {{page.description}}
         </p>
       </div>

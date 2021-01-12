@@ -1,22 +1,22 @@
 <!-- ======= Navbar ======= -->
-<nav id="main-nav">
-    <div class="row">
-      <div class="container">
-
-        <div class="logo">
-          <a href="{{ 'index.html' | relative_url}}"><img src="{{ 'assets/img//logo.png' | relative_url}}" alt="logo"></a>
-        </div>
-
-        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
-
-        <ul class="nav-menu list-unstyled">
-          <li><a href="{{ index.html | relative_url}}" class="smoothScroll">Home</a></li>
-          <li><a href="#about" class="smoothScroll">About</a></li>
-          <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
-          <!-- <li><a href="#journal" class="smoothScroll">Blog</a></li> -->
-          <li><a href="#contact" class="smoothScroll">Contact</a></li>
-        </ul>
-
+<nav id="main-nav" class="main-nav">
+  <div class="container main-nav__wrapper">
+    <div class="main-nav__logo">
+      <a href="{{ 'index.html' | relative_url}}"><img src="{{ 'assets/img//logo.png' | relative_url}}" alt="logo"></a>
+    </div>
+    <div class="main-nav__mobile d-block d-lg-none">
+      <div class="main-nav__mobile__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-  </nav><!-- End Navbar -->
+    <ul class="list-unstyled main-nav__menu d-none d-lg-flex ">
+      <li class="main-nav__menu__item"><a href="{{ index.html | relative_url}}" class="smoothScroll main-nav__menu__item__text">Home</a></li>
+      <li class="main-nav__menu__item"><a href="#about" class="smoothScroll main-nav__menu__item__text">About</a></li>
+      <li class="main-nav__menu__item"><a href="#portfolio" class="smoothScroll main-nav__menu__item__text">Portfolio</a></li>
+      <li class="main-nav__menu__item"><a href="#contact" class="smoothScroll main-nav__menu__item__text">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+  <!-- End Navbar -->

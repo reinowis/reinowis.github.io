@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
   "use strict";
 
   //Contact
-  $('form.php-email-form').submit(function() {
+  $('form.contact__form').submit(function() {
    
     var f = $(this).find('.form-group'),
       ferror = false,
@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
             }
             break;
         }
-        i.next('.validate').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+        i.next('.contact__form__validate').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
     });
     f.children('textarea').each(function() { // run all inputs
@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
             }
             break;
         }
-        i.next('.validate').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+        i.next('.contact__form__validate').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
     });
     if (ferror) return false;
@@ -97,12 +97,12 @@ jQuery(document).ready(function($) {
 
     if( ! action ) {
       this_form.find('.loading').slideUp();
-      this_form.find('.error-message').slideDown().html('The form action property is not set!');
+      this_form.find('.contact__form__error').slideDown().html('The form action property is not set!');
       return false;
     }
     
-    this_form.find('.sent-message').slideUp();
-    this_form.find('.error-message').slideUp();
+    this_form.find('.contact__form__message').slideUp();
+    this_form.find('.contact__form__error').slideUp();
     this_form.find('.loading').slideDown();
     
     $.ajax({
@@ -112,11 +112,11 @@ jQuery(document).ready(function($) {
       success: function(msg) {
         if (msg == 'OK') {
           this_form.find('.loading').slideUp();
-          this_form.find('.sent-message').slideDown();
+          this_form.find('.contact__form__message').slideDown();
           this_form.find("input:not(input[type=submit]), textarea").val('');
         } else {
           this_form.find('.loading').slideUp();
-          this_form.find('.error-message').slideDown().html(msg);
+          this_form.find('.contact__form__error').slideDown().html(msg);
         }
       }
     });

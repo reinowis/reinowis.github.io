@@ -1,14 +1,13 @@
 /**
-* Template Name: Folio - v2.2.0
-* Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+* Personal Website: Huynh (Reino) Mai
+* Template URL: https://reinowis.github.io
+* Author: Huynh (Reino) Mai
 */
 (function($) {
 	"use strict";
   
 	// Smooth scroll for the navigation menu and links with .scrollto classes
-	var scrolltoOffset = $('#main-nav').outerHeight() - 1;
+	var scrolltoOffset = $('.main-nav').outerHeight() - 1;
 	$(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
 	  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 		var target = $(this.hash);
@@ -46,16 +45,16 @@
 	//  //NAVBAR SHOW - HIDE
 	// ========================================================================= //
   
-	$(window).scroll(function() {
-	  var scroll = $(window).scrollTop();
-	  if (!$('.subpage-nav').length) {
-		if (scroll > 200) {
-		  $("#main-nav").slideDown(700);
-		} else {
-		  $("#main-nav").slideUp(700);
-		}
-	  }
-	});
+	// $(window).scroll(function() {
+	//   var scroll = $(window).scrollTop();
+	//   if (!$('.subpage-nav').length) {
+	// 	if (scroll > 200) {
+	// 	  $(".main-nav").slideDown(700);
+	// 	} else {
+	// 	  $(".main-nav").slideUp(700);
+	// 	}
+	//   }
+	// });
   
 	// ========================================================================= //
 	//  // RESPONSIVE MENU
@@ -132,7 +131,7 @@
 	});
   
 	// Portfolio details carousel
-	$(".portfolio-details-carousel").owlCarousel({
+	$(".portfolio-detail__carousel").owlCarousel({
 	  autoplay: true,
 	  dots: true,
 	  loop: true,
