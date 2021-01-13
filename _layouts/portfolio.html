@@ -5,39 +5,37 @@ layout: default
   <!-- ======= Breadcrumbs Section ======= -->
   <section class="breadcrumbs">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <h2 class="breadcrumbs__title">Portfolio Details</h2>
+      <div class="d-lg-flex justify-content-between align-items-center">
+        <h2 class="breadcrumbs__title"><span class="text-capitalize">{{page.title}}</span></h2>
         <ol class="breadcrumbs__list">
           <li class="breadcrumbs__list__item"><a href="{{ index.html | realative_url}}">Home</a></li>
           <li class="breadcrumbs__list__item"><a href="{{ portfolio.html | realative_url}}">Portfolio</a></li>
-          <li class="breadcrumbs__list__item">Portfolio Details</li>
+          <li class="breadcrumbs__list__item"><span class="text-capitalize">{{page.title}}</span></li>
         </ol>
       </div>
 
     </div>
   </section>
   <!-- Breadcrumbs Section -->
-
   <!-- ======= Portfolio Details Section ======= -->
   <section class="portfolio-detail">
     <div class="container">
       <div class="portfolio-detail__wrapper">
-
         <div class="owl-carousel portfolio-detail__carousel">
-          <img src="{{page.image | relative_url}}" class="img-fluid portfolio-detail__image" alt="{{page.title}} -image">
+          <img src="{{page.image | relative_url}}" class="img-fluid portfolio-detail__image" alt="{{page.title}} - image">
           {%- if page.gallery -%}
-          {%- for img in pgae.gallery -%}
+          {%- for img in page.gallery -%}
           <img src="{{img | relative_url}}" class="img-fluid portfolio-detail__image" alt="{{page.title}} - images">
           {%- endfor -%}
           {%- endif -%}
         </div>
-
         <div class="portfolio-detail__info">
           <h3>Project information</h3>
           <ul class="portfolio-detail__list">
-            <li class="portfolio-detail__list__item"><strong>Category</strong>: {{page.note}}</li>
+            <li class="portfolio-detail__list__item"><strong>Category</strong>: <span class="text-capitalize">{{page.platform}}</span></li>
             <li class="portfolio-detail__list__item"><strong>Project date</strong>: {{page.time}}</li>
-            <li class="portfolio-detail__list__item"><strong>Project URL</strong>: <a href="{{page.link}}">page.link</a></li>
+            <li class="portfolio-detail__list__item"><strong>Project URL</strong>: <a href="{{page.link}}" target="_blank">{{page.link}}</a></li>
+            <li class="portfolio-detail__list__item"><strong>Technologies</strong>: {{page.technologies}}</li>
           </ul>
         </div>
 

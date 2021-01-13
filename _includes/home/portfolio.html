@@ -16,7 +16,7 @@
       </div>
       <div class="row portfolio-list__wrapper">
         {%- for project in site.portfolio -%}
-        <div class="col-lg-4 col-md-6 portfolio-list__item filter-{{project.type}}">
+        <div class="col-lg-4 col-md-6 portfolio-list__item filter-{{project.platform}}">
           <img src="{{ project.image | relative_url }}" class="img-fluid portfolio-list__item__image" alt="">
           <div class="portfolio-list__item__content">
             <h4 class="portfolio-list__item__title">{{project.title}}</h4>

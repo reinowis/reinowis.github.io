@@ -2,51 +2,43 @@
 # Footer
 --------------------------------------------------------------*/
 
-#footer {
+.footer {
     background: $color-bg-second;
-    padding-top: 50px;
-    padding-bottom: 50px;
-
-    .socials-media {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    &__content {
         width: 100%;
-
-        ul {
-            display: inline-block;
-            float: none;
-            margin: 0 0 20px 0;
-
-            li {
-                float: left;
-                margin-left: 10px;
-                margin-right: 10px;
-
-                a {
-                    font-size: 24px;
+    }
+    &__social-list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 1rem 0;
+        &__item {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            &__text {
+                font-size: 24px;
+                color: $color-text-second;
+                letter-spacing: 0.1em;
+                font-weight: 500;
+                background: transparent;
+                text-transform: uppercase;
+                transition: all 0.5s ease-in-out 0s;
+                &:hover {
                     color: $color-text-second;
-                    letter-spacing: 0.1em;
-                    font-weight: 500;
-                    background: transparent;
-                    text-transform: uppercase;
                     transition: all 0.5s ease-in-out 0s;
-
-                    &:hover {
-                        color: $color-text-second;
-                        transition: all 0.5s ease-in-out 0s;
-                    }
                 }
             }
         }
     }
-
-    p {
+    &__credits {
         font-size: 12px;
         letter-spacing: 0.1em;
         font-weight: 500;
         margin-top: 0;
         text-transform: uppercase;
     }
-}
-
-.credits {
-    font-size: 13px;
 }
