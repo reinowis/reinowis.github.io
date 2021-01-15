@@ -4,19 +4,19 @@
     <div class="main-nav__logo">
       <a href="{{ 'index.html' | relative_url}}"><img src="{{ 'assets/img//logo.png' | relative_url}}" alt="logo"></a>
     </div>
-    <div class="main-nav__mobile d-block d-lg-none">
-      <div class="main-nav__mobile__toggle">
+    <div class="main-nav__toggle d-block d-lg-none" data-toggle="collapse" data-target="#menu-nav" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
     </div>
-    <ul class="list-unstyled main-nav__menu d-none d-lg-flex ">
-      <li class="main-nav__menu__item"><a href="{{ index.html | relative_url}}" class="smoothScroll main-nav__menu__item__text">Home</a></li>
-      <li class="main-nav__menu__item"><a href="#about" class="smoothScroll main-nav__menu__item__text">About</a></li>
-      <li class="main-nav__menu__item"><a href="#portfolio" class="smoothScroll main-nav__menu__item__text">Portfolio</a></li>
-      <li class="main-nav__menu__item"><a href="#contact" class="smoothScroll main-nav__menu__item__text">Contact</a></li>
-    </ul>
+    <div class="main-nav__item main-nav__menu collapse" id="menu-nav">
+      <ul class="list-unstyled main-nav__menu__wrapper">
+        <li class="main-nav__menu__item"><a href="{{ index.html | relative_url}}" class="smoothScroll main-nav__menu__item__text">Home</a></li>
+        <li class="main-nav__menu__item"><a href="#about" class="smoothScroll main-nav__menu__item__text">About</a></li>
+        <li class="main-nav__menu__item"><a href="#portfolio" class="smoothScroll main-nav__menu__item__text">Portfolio</a></li>
+        <li class="main-nav__menu__item"><a href="#contact" class="smoothScroll main-nav__menu__item__text">Contact</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
   <!-- End Navbar -->
