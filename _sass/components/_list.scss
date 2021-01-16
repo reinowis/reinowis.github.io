@@ -25,51 +25,22 @@ List of skills
             font-size: 13px;
             line-height: 22px;
         }
-
         &__icon {
             font-size: 35px;
         }
-
         &__content {
+            color: $color-text-second;
             padding-left: 0px;
-
             &__item {
                 list-style: none;
             }
         }
-    }
-
-    // Carousel Custom
-    .owl-item {
-        float: left;
-    }
-
-    .owl-stage-outer {
-        overflow: hidden;
-    }
-
-    .owl-dots {
-        margin-top: 5px;
-        text-align: center;
-    }
-
-    .owl-dot {
-        display: inline-block;
-        margin: 0 5px;
-        width: 12px !important;
-        height: 12px !important;
-        border-radius: 50%;
-        border: 0;
-        padding: 0 !important;
-        background-color: #ddd;
-        cursor: pointer;
-
-        &.active {
-            background-color: $color-text-second;
+        @media screen and (max-width: 767px){
+            text-align: center;
+            &__title, &__content{
+                text-align: center;
+            }
         }
-    }
-    .owl-nav.disabled{
-        display: none;
     }
 }
 
@@ -104,7 +75,7 @@ List of timeline
             }
 
             &:before {
-                background: #fff;
+                background: $color-bg-main;
                 border: 2px solid #232323;
                 left: -3px;
             }
@@ -130,7 +101,7 @@ List of timeline
             flex: 1 0 calc((100% - 20px)/2);
             padding: 20px 50px;
             order: 2;
-            background: $color-bg-main;
+            background: transparent;
         }
 
         &__title {
@@ -182,7 +153,7 @@ List of timeline
             }
 
             &:before {
-                background: #fff;
+                background: $color-bg-main;
                 border: 2px solid #232323;
                 left: -6px;
             }
@@ -281,6 +252,7 @@ List of timeline
             &__content{
                 width: 100%;
                 text-align: center;
+                background: $color-bg-second;
             }
         }
     }
@@ -349,7 +321,7 @@ List of Portfolio
             bottom: 0;
             z-index: 3;
             transition: all ease-in-out 0.3s;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba($color: $color-bg-main, $alpha: 1.0);
             padding: 15px;
             display: flex;
             align-items: center;
@@ -391,5 +363,52 @@ List of Portfolio
             }
         }
 
+    }
+}
+/** Carousel */
+.owl-carousel{
+    .owl-stage-outer {
+        overflow: hidden;
+    }
+
+    .owl-dots {
+        margin-top: 5px;
+        text-align: center;
+        &.disabled{
+            display: none;
+        }
+        &:not(.disabled):not(:last-child){
+            display: none;
+        }
+    }
+
+    .owl-dot {
+        display: inline-block;
+        margin: 0 5px;
+        width: 12px !important;
+        height: 12px !important;
+        border-radius: 50%;
+        border: 0;
+        padding: 0 !important;
+        background-color: #ddd;
+        cursor: pointer;
+
+        &.active {
+            background-color: $color-text-second;
+        }
+    }
+    .owl-nav{
+        &.disabled{
+            display: none;
+        }
+    }
+}
+/** Social List*/
+.social-list{
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+    &__item{
+        padding-left: 0px;
     }
 }

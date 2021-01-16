@@ -1,0 +1,9 @@
+<ul class="social-list">
+    {%- for item in site.social -%}
+    <li class="social-list__item">
+        <a class="social-list__item__text" href="{{item.url}}" title="{{item.label | capitalize }}">
+            <ion-icon name="logo-{{item.label | downcase}}" aria-label="{{item.label | capitalize }}"></ion-icon>
+        </a>
+    </li>
+    {%- endfor -%}
+</ul>

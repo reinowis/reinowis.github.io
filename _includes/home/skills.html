@@ -1,6 +1,6 @@
-<div id="skills" class="skill-list__wrapper">
+<section id="skills" class="section section--padding skill-list__wrapper">
     <div class="container">
-        <div class="skill-list owl-theme">
+        <div class="skill-list owl-carousel owl-theme">
             {%- for skill in site.data.skills -%}
             <div class="skill-list__item">
                 <ion-icon class="skill-list__item__icon" name="{{skill.icon}}"></ion-icon>
@@ -16,4 +16,4 @@
             {%- endfor -%}
         </div>
     </div>
-</div>
+</section>

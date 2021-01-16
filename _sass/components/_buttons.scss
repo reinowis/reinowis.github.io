@@ -2,14 +2,14 @@
     background: #333;
     border: medium none;
     border-radius: 0;
-    color: #fff;
+    color: $color-bg-main;
     font-size: 12px;
     height: 50px;
     line-height: 50px;
     padding: 0 30px;
     text-transform: uppercase;
     &:hover, &:focus {
-        color: #fff;
+        color: $color-bg-main;
       }
   }
   

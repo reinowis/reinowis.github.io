@@ -1,28 +1,34 @@
 # Site settings
 title: Huynh (Reino) Mai - a front-end developer
-fullnam: Huynh (Reino) Mai
+fullname: Huynh (Reino) Mai
 email: maihuynh16995@gmail.com
 phone: (+84) 946 607 797
 description: Huynh (Reino) Mai, a front-end developer, based in HCMC, Vietnam.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://reinowis.github.io" # the base hostname & protocol for your site
-
+keywords: "front-end, vietnam, developer, ben tre, mekong delta, angularjs, html, css, javascript"
+intro: 
+    highlight: I'm Reino, a front-end developer based in HCMC, Vietnam. Traveling and reading are my favorite hobbies.
+    content: I have been working as a front-end developer for 3 years. i'm always eagle for not only learning the new things about front-end technologies, but also the new challenges everyday. 
 # Social settings
 500px_url:
 # facebook_url: https://facebook.com
-github_url: https://github.com/reinowis
-# gitlab_url: https://gitlab.com/u/andrewbanchich
-# googleplus_url: https://plus.google.com/u/0/+AndrewBanchich
-# instagram_url: https://instagram.com
-linkedin_url: https://www.linkedin.com/in/huynh-reino-mai/
-pinterest_url:
-slack_url:
+social:
+    -   label: github
+        url: https://github.com/reinowis
+    -   label: linkedin
+        url: https://www.linkedin.com/in/huynh-reino-mai/
+    -   label: behance
+        url: https://www.behance.net/reinowis
+    -   label: skype
+        url: "skype:mousewis"
 # twitter_url: https://twitter.com/andrewbanchich
 
 # Build settings
 markdown: kramdown
 sass:
     sass_dir: _sass
+    style: compressed
 collections:
     portfolio:
         output: true

@@ -1,24 +1,20 @@
-<div id="about" class="section--padding">
+<section id="about" class="section section--padding about">
     <div class="container">
         <div class="row justify-content-between">
 
             <div class="col-lg-4 ">
-                <div class="div-img-bg">
-                    <div class="about-img">
-                        <img src="assets/img/me.jpg" class="img-responsive" alt="me">
+                <div class="about__image__wrapper">
+                    <div class="about__image">
+                        <img src="{{'assets/img/thumb.jpg' | relative_url}}" data-src="{{'assets/img/me.jpg' | relative_url}}" class="lazyload img-responsive" alt="{{site.fullname}}">
                     </div>
                 </div>
             </div>
             <div class="col-lg-7">
-                <div class="about-descr">
-                    <p class="p-heading">i'm Reino, a front-end developer based in HCMC, Vietnam. traveling and reading are my
-                        favorite
-                        hobbies. </p>
-                    <p class="separator">have been working as a front-end developer for 3 years. i'm always eagle for
-                        learning
-                        the new things about front-end technologies, and the challenges. </p>
+                <div class="about__description">
+                    <p class="about__description__highlight">{{site.intro.highlight}}</p>
+                    <p class="about__description__content">{{site.intro.content}}</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>

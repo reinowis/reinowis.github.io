@@ -1,10 +1,11 @@
 /*--------------------------------------------------------------
 # Navbar
 --------------------------------------------------------------*/
-.main-nav {
+.header {
+  position: -webkit-sticky;
   position: sticky;
-  top: 0px;
-  background: #fff;
+  top: -1px;
+  background: $color-bg-main;
   z-index: 1000;
   width: 100%;
   padding: 0.5rem;
@@ -16,10 +17,15 @@
     align-items: center;
     justify-content: space-between;
   }
-
+  &__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
   &__menu {
     @include transition;
-
+    flex-basis: 0;
     &__wrapper {
       line-height: 32px;
       margin-bottom: 0;
@@ -49,7 +55,7 @@
 
       &:hover,
       &:focus {
-        .main-nav__menu__item__text {
+        .header__menu__item__text {
           color: $color-text-third;
           text-decoration: underline;
         }
@@ -70,10 +76,10 @@
       &.collapse.show {
         height: auto;
         flex-basis: 100%;
-        .main-nav__menu__wrapper {
+        .header__menu__wrapper {
           display: flex;
         }
-        & ~ .main-nav__toggle {
+        & ~ .header__toggle {
           display: flex;
           span {
             position: absolute;
@@ -105,6 +111,9 @@
     @media screen and (min-width: 992px) {
       &.collapse {
         display: block !important;
+      }
+      &__wrapper{
+        justify-content: flex-end;
       }
     }
   }
@@ -147,5 +156,14 @@
         top: 18px;
       }
     }
+  }
+  &__backdrop{
+    z-index: 999;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }

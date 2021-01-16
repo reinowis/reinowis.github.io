@@ -1,4 +1,4 @@
-<div id="portfolio" class="section--padding portfolio-list">
+<section id="portfolio" class="section section--padding portfolio-list">
     <div class="container">
       <div class="section__title text-center">
         <h2>My Portfolio</h2>
@@ -17,11 +17,11 @@
       <div class="row portfolio-list__wrapper">
         {%- for project in site.portfolio -%}
         <div class="col-lg-4 col-md-6 portfolio-list__item filter-{{project.platform}}">
-          <img src="{{ project.image | relative_url }}" class="img-fluid portfolio-list__item__image" alt="">
+          <img data-src="{{ project.image | relative_url }}" class="lazyload img-fluid portfolio-list__item__image" alt="">
           <div class="portfolio-list__item__content">
-            <h4 class="portfolio-list__item__title">{{project.title}}</h4>
+            <h3 class="portfolio-list__item__title">{{project.title}}</h4>
             <div class="portfolio-list__item__link">
-              <a href="{{ project.image | relative_url }}" data-gall="portfolioGallery" class="portfolio-list__item__link__text" title="{{project.title}}">
+              <a href="{{ project.image | relative_url }}" data-gall="portfolioGallery" class="venobox portfolio-list__item__link__text" title="{{project.title}}">
                 <ion-icon name="add-outline"></ion-icon>
               </a>
               <a href="{{project.url}}" class="portfolio-list__item__link__text" title="More Details">
@@ -33,4 +33,4 @@
         {%- endfor -%}
       </div>
     </div>
-  </div>
+  </section>

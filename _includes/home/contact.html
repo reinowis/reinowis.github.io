@@ -1,5 +1,5 @@
 <!-- ======= Contact Section ======= -->
-<div id="contact" class="section section--padding">
+<section id="contact" class="section section--padding">
     <div class="container">
       <div class="contact">
         <div class="row">
@@ -16,45 +16,46 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfBh8gpeTktSKQofAi_abtFslo00TPpWgroNRXteEFifPctYg/formResponse" method="post" role="form" class="contact__form" target="result">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfBh8gpeTktSKQofAi_abtFslo00TPpWgroNRXteEFifPctYg/formResponse" method="post" role="form" class="contact__form">
               <div class="row">
                 <!-- Name -->
-                <div class="col-lg-6">
+                <div class="col-12">
                   <div class="form-group">
-                    <input type="text" name="entry.1327761907"  required  class="contact__form__input" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <label for="name" class="invisible-hidden">Name</label>
+                    <input type="text" name="entry.1327761907"  required  class="form-control contact__form__input" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                     <div class="contact__form__validate"></div>
                   </div>
                 </div>
                 <!-- Email -->
-                <div class="col-lg-6">
+                <div class="col-12">
                   <div class="form-group">
-                    <input type="email" class="contact__form__input" name="emailAddress"  required id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <label for="email" class="invisible-hidden">Email</label>
+                    <input type="email" class="form-control contact__form__input" required name="emailAddress"  required id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                     <div class="contact__form__validate"></div>
                   </div>
                 </div>
                 <!-- Message -->
-                <div class="col-lg-12">
+                <div class="col-12">
                   <div class="form-group">
-                    <textarea class="contact__form__input" name="entry.1962336269" required rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                    <label for="message" class="invisible-hidden">Message</label>
+                    <textarea id="message" class="form-control contact__form__input" name="entry.1962336269" required rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                     <div class="contact__form__validate"></div>
                   </div>
                 </div>
-                <!-- Sent Message -->
-                <div class="col-lg-12 mb-3">
-                  <div class="loading">Loading</div>
+                <div class="col-12 mb-3">
+                  <div class="contact__form__loading">Loading</div>
                   <div class="contact__form__error"></div>
                   <div class="contact__form__message">Your message has been sent. Thank you!</div>
                 </div>
                 <!-- Send Btn -->
-                <div class="col-lg-12">
+                <div class="col-12">
                   <input type="submit" class="btn btn-defeault btn-send contact__form__submit" value="Send message">
                 </div>
-
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Contact Section -->
+</section>
+<!-- End Contact Section -->

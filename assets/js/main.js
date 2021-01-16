@@ -3,139 +3,116 @@
 * Template URL: https://reinowis.github.io
 * Author: Huynh (Reino) Mai
 */
-(function($) {
+(function ($) {
 	"use strict";
-  
-	// Smooth scroll for the navigation menu and links with .scrollto classes
-	var scrolltoOffset = $('.main-nav').outerHeight() - 1;
-	$(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
-	  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-		var target = $(this.hash);
-		if (target.length) {
-		  e.preventDefault();
-  
-		  var scrollto = target.offset().top - scrolltoOffset;
-  
-		  $('html, body').animate({
-			scrollTop: scrollto
-		  }, 1500, 'easeInOutExpo');
-  
-		  if (window.matchMedia("(max-width:991px)").matches) {
-			$('.nav-menu').hide();
-		  }
-		  return false;
-		}
-	  }
-	});
-  
-	// Activate smooth scroll on page load with hash links in the url
-	$(document).ready(function() {
-	  if (window.location.hash) {
-		var initial_nav = window.location.hash;
-		if ($(initial_nav).length) {
-		  var scrollto = $(initial_nav).offset().top - scrolltoOffset;
-		  $('html, body').animate({
-			scrollTop: scrollto
-		  }, 1500, 'easeInOutExpo');
-		}
-	  }
-	});
-  
-	// ========================================================================= //
-	//  //NAVBAR SHOW - HIDE
-	// ========================================================================= //
-  
-	// $(window).scroll(function() {
-	//   var scroll = $(window).scrollTop();
-	//   if (!$('.subpage-nav').length) {
-	// 	if (scroll > 200) {
-	// 	  $(".main-nav").slideDown(700);
-	// 	} else {
-	// 	  $(".main-nav").slideUp(700);
-	// 	}
-	//   }
-	// });
-  
-	// ========================================================================= //
-	//  // RESPONSIVE MENU
-	// ========================================================================= //
-  
-	$('.responsive').on('click', function(e) {
-	  $('.nav-menu').slideToggle();
-	});
-  
 	// ========================================================================= //
 	//  Typed Js
 	// ========================================================================= //
-  
-	var typed = $(".typed");
-  
-	$(function() {
-	  var strings = $('.typed-items').text();
-	  strings = $('.typed-items').data('typed-person') + ',' + strings;
-	  strings = strings.split(',');
-  
-	  typed.typed({
-		strings: strings,
-		typeSpeed: 100,
-		loop: true,
-	  });
-	});
-   
-	// ========================================================================= //
-	//  Owl Carousel skills
-	// ========================================================================= //
-  
-	$('.skill-list').owlCarousel({
-	  autoplay: true,
-	  loop: true,
-	  margin: 20,
-	  dots: true,
-	  nav: false,
-	  responsiveClass: true,
-	  responsive: {
-		0: {
-		  items: 1
-		},
-		768: {
-		  items: 2
-		},
-		900: {
-		  items: 4
-		}
-	  }
-	});
-  
-	// ========================================================================= //
-	//  Porfolio isotope and filter
-	// ========================================================================= //
-	$(window).on('load', function() {
-	  var portfolioIsotope = $('.portfolio-container').isotope({
-		itemSelector: '.portfolio-item',
-		layoutMode: 'fitRows'
-	  });
-  
-	  $('#portfolio-flters li').on('click', function() {
-		$("#portfolio-flters li").removeClass('filter-active');
-		$(this).addClass('filter-active');
-  
-		portfolioIsotope.isotope({
-		  filter: $(this).data('filter')
-		});
-	  });
-	});
-  
+
+	
+
 	// Initiate venobox (lightbox feature used in portofilo)
-	$(document).ready(function() {
-	  $('.venobox').venobox();
+	$(document).ready(function () {
+		$('.venobox').venobox();
+		var typed = $(".typed");
+		// ========================================================================= //
+		//  Typed Text
+		// ========================================================================= //
+		$(function () {
+			var strings = $('.typed-items').text();
+			strings = $('.typed-items').data('typed-person') + ',' + strings;
+			strings = strings.split(',');
+
+			typed.typed({
+				strings: strings,
+				typeSpeed: 100,
+				loop: true,
+			});
+		});
+		// ========================================================================= //
+		//  Observer Header
+		// ========================================================================= //
+		var stickyElem = $("#menu-nav");
+		var observer = new IntersectionObserver(function (e) {
+			if ($(window).width() < 992) {
+				for (let i = 0; i < e.length; i++) {
+					if (e[i].isIntersecting) {
+						$("body").toggleClass('is-backdrop', true);
+						$("body").append("<div class='header__backdrop'></div>");
+					}
+					else {
+						$("body").toggleClass('is-backdrop', false);
+						$(".header__backdrop").remove();
+					}
+				}
+			}
+
+		}, { threshold: [0], rootMargin: '-50px 0px -55%' });
+		for (let i = 0; i < stickyElem.length; i++) {
+			observer.observe(stickyElem[i]);
+		}
+		// ========================================================================= //
+		//  Owl Carousel Skills
+		// ========================================================================= //
+
+		$('.skill-list').owlCarousel({
+			autoplay: true,
+			loop: true,
+			margin: 20,
+			dots: true,
+			nav: false,
+			responsiveClass: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				768: {
+					items: 2
+				},
+				900: {
+					items: 4
+				}
+			}
+		});
+		// ========================================================================= //
+		//  Owl Carousel Portfolio
+		// ========================================================================= //
+		$(".portfolio-detail__carousel").owlCarousel({
+			autoplay: true,
+			dots: true,
+			loop: true,
+			items: 1
+		});
+		// ========================================================================= //
+		//  Lazy Load
+		// ========================================================================= //
+		lazyload();
 	});
-  
-	// Portfolio details carousel
-	$(".portfolio-detail__carousel").owlCarousel({
-	  autoplay: true,
-	  dots: true,
-	  loop: true,
-	  items: 1
+
+	
+	// ========================================================================= //
+	//  Smooth Scroll
+	// ========================================================================= //
+	$("a").on('click', function (event) {
+
+		// Make sure this.hash has a value before overriding default behavior
+		if (this.hash !== "") {
+			// Prevent default anchor click behavior
+			event.preventDefault();
+
+			// Store hash
+			var hash = this.hash;
+
+			// Using jQuery's animate() method to add smooth page scroll
+			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 800, function () {
+
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = hash;
+			});
+		} // End if
 	});
-  
-  })(jQuery);
+
+})(jQuery);

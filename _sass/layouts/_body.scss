@@ -3,13 +3,16 @@
 --------------------------------------------------------------*/
 body {
   background: $color-bg-main;
-  color: #898989;
+  color: $color-text-second;
   font-family: 'Poppins', helvetica;
   font-size: 15px;
   font-weight: 300;
   line-height: 20px;
   letter-spacing: 0.02em;
   position: relative;
+  &.is-backdrop{
+    overflow: hidden;
+  }
 }
 ::-moz-selection {
   background: $color-bg-third;
@@ -19,4 +22,7 @@ body {
 ::selection {
   background: $color-bg-third;
   color: $color-text-white;
+}
+#main{
+  position: relative;
 }
