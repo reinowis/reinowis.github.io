@@ -9,6 +9,5 @@ pages:
   artifacts:
     paths:
     - public
-    - "highlights_jekyll_theme-*.gem"
   only:
   - master
