@@ -5,7 +5,6 @@ pages:
   script:
   - gem install jekyll
   - jekyll build -d public
-  - gem build highlights_jekyll_theme.gemspec
   artifacts:
     paths:
     - public
