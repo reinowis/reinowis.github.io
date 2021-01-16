@@ -374,6 +374,12 @@ List of Portfolio
     .owl-dots {
         margin-top: 5px;
         text-align: center;
+        .owl-dot{
+            background-color: $color-bg-third;
+            &.active{
+                background-color: $color-text-main;
+            }
+        }
         &.disabled{
             display: none;
         }

@@ -3,22 +3,22 @@
   <div class="container header__wrapper">
     <div class="header__item">
       <div class="header__logo">
-        <a href="{{ 'index.html' | relative_url}}"><img src="{{ 'assets/img//logo.png' | relative_url}}" alt="logo"></a>
+        <a href="{{ 'index.html' | relative_url}}"><img src="{{ 'assets/img/logo.png' | relative_url}}" alt="logo"></a>
       </div>
-      <div class="header__toggle d-block d-lg-none" data-toggle="collapse" data-target="#menu-nav" aria-expanded="false">
+      <button class="header__toggle d-block d-lg-none" onclick="toggleHeader(event)">
           <span></span>
           <span></span>
           <span></span>
-      </div>
+      </button>
     </div>
-    <nav class="header__item header__menu collapse" id="menu-nav">
+    <div class="header__item header__menu collapse" id="menu-nav">
       <ul class="nav list-unstyled header__menu__wrapper">
-        <li class="nav-item header__menu__item"><a href="{{ index.html | relative_url}}" class="header__menu__item__text">Home</a></li>
+        <li class="nav-item header__menu__item"><a href="{{site.url}}" class="header__menu__item__text">Home</a></li>
         <li class="nav-item header__menu__item"><a href="#about" class="header__menu__item__text">About</a></li>
         <li class="nav-item header__menu__item"><a href="#portfolio" class="header__menu__item__text">Portfolio</a></li>
         <li class="nav-item header__menu__item"><a href="#contact" class="header__menu__item__text">Contact</a></li>
       </ul>
-    </nav>
+    </div>
   </div>
 </header>
   <!-- End Navbar -->

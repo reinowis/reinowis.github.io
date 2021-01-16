@@ -4,14 +4,8 @@
 * Author: Huynh (Reino) Mai
 */
 (function ($) {
-	"use strict";
-	// ========================================================================= //
-	//  Typed Js
-	// ========================================================================= //
-
 	
 
-	// Initiate venobox (lightbox feature used in portofilo)
 	$(document).ready(function () {
 		$('.venobox').venobox();
 		var typed = $(".typed");
@@ -50,6 +44,30 @@
 		}, { threshold: [0], rootMargin: '-50px 0px -55%' });
 		for (let i = 0; i < stickyElem.length; i++) {
 			observer.observe(stickyElem[i]);
+		}
+		// ========================================================================= //
+		//  Observer Menu Tracker
+		// ========================================================================= //
+		var trackElem = $("[data-tracked]");
+		var trackObserver = new IntersectionObserver(function (e) {
+			for (let i = 0; i < e.length; i++) {
+				let idTracked = $(e[i].target).attr("id");
+				let navTracked = $(e[i].target).attr('data-tracked');
+				if (e[i].isIntersecting) {
+					if (navTracked && $(navTracked).length > 0){
+						$(navTracked).find("[href='#" + idTracked + "']").addClass("active");
+					}
+				}
+				else {
+					if (navTracked && $(navTracked).length > 0){
+						$(navTracked).find("[href='#" + idTracked + "']").removeClass("active");
+					}
+				}
+			}
+
+		}, { threshold: [0], rootMargin: '-50px 0px -55%' });
+		for (let i = 0; i < trackElem.length; i++) {
+			trackObserver.observe(trackElem[i]);
 		}
 		// ========================================================================= //
 		//  Owl Carousel Skills
@@ -116,3 +134,7 @@
 	});
 
 })(jQuery);
+function toggleHeader(event){
+	$(event.currentTarget).toggleClass("open");
+	$("#menu-nav").collapse("toggle");
+}
