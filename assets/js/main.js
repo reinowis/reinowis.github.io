@@ -132,6 +132,26 @@
 			});
 		} // End if
 	});
+	$(window).on("load", function(){
+		// ========================================================================= //
+		//  Filter Portfolio
+		// ========================================================================= //
+		var portfolioIsotope = $('.portfolio-list__wrapper').isotope({
+			itemSelector: ".portfolio-list__item",
+			layoutMode: "fitRows"
+		  });
+	  
+		  $('.portfolio-list__filters__item').on('click', function() {
+			$('.portfolio-list__filters__item').removeClass('filter-active');
+			$(this).addClass('filter-active');
+	  
+			portfolioIsotope.isotope({
+			  filter: $(this).data('filter')
+			});
+		  });
+
+	})
+	
 
 })(jQuery);
 function toggleHeader(event){

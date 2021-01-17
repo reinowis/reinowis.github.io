@@ -8,16 +8,16 @@
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
           <ul class="portfolio-list__filters">
-            <li class="portfolio-list__filters filter-active" data-filter="*" >All</li>
-            <li class="portfolio-list__filters" data-filter=".filter-app">App</li>
-            <li class="portfolio-list__filters" data-filter=".filter-web">Web</li>
+            <li class="portfolio-list__filters__item filter-active" data-filter="*" >All</li>
+            <li class="portfolio-list__filters__item" data-filter=".filter-app">App</li>
+            <li class="portfolio-list__filters__item" data-filter=".filter-web">Web</li>
           </ul>
         </div>
       </div>
       <div class="row portfolio-list__wrapper">
         {%- for project in site.portfolio -%}
         <div class="col-lg-4 col-md-6 portfolio-list__item filter-{{project.platform}}">
-          <img data-src="{{ project.image | relative_url }}" class="lazyload img-fluid portfolio-list__item__image" alt="">
+          <img src="{{ project.image | relative_url }}" class="img-fluid portfolio-list__item__image" alt="">
           <div class="portfolio-list__item__content">
             <h3 class="portfolio-list__item__title">{{project.title}}</h4>
             <div class="portfolio-list__item__link">

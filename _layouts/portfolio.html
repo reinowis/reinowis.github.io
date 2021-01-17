@@ -23,10 +23,9 @@ name: portfolio
     <div class="container">
       <div class="portfolio-detail__wrapper">
         <div class="owl-carousel portfolio-detail__carousel">
-          <img src="{{page.image | relative_url}}" class="img-fluid portfolio-detail__image" alt="{{page.title}} - image">
           {%- if page.gallery -%}
           {%- for img in page.gallery -%}
-          <img src="{{img | relative_url}}" class="img-fluid portfolio-detail__image" alt="{{page.title}} - images">
+          <img src="{{'assets/img/thumb.jpg' | relative_url}}"  data-src="{{img | relative_url}}" class="lazyload img-fluid portfolio-detail__image" alt="{{page.title}} - images">
           {%- endfor -%}
           {%- endif -%}
         </div>
