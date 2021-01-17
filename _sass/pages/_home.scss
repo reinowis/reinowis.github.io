@@ -67,7 +67,7 @@
     background: $color-bg-second;
     padding-top: 120px;
 
-    .about__image {
+    &__image {
         padding-left: 30px;
         padding-bottom: 30px;
         width: fit-content;
@@ -105,6 +105,7 @@
 
     &__description {
         &__highlight {
+            font-family: 'Playfair Display', serif;
             font-size: 28px;
             text-align: left;
         }

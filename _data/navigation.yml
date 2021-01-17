@@ -1,0 +1,10 @@
+- url: '#home-banner'
+  label: Home
+- url: '#about'
+  label: About
+- url: '#portfolio'
+  label: Portfolio
+- url: '#timeline'
+  label: Timeline
+- url: "#contact"
+  label: Contact

@@ -13,10 +13,9 @@
     </div>
     <div class="header__item header__menu collapse" id="menu-nav">
       <ul class="nav list-unstyled header__menu__wrapper">
-        <li class="nav-item header__menu__item"><a href="{{site.url}}" class="header__menu__item__text">Home</a></li>
-        <li class="nav-item header__menu__item"><a href="#about" class="header__menu__item__text">About</a></li>
-        <li class="nav-item header__menu__item"><a href="#portfolio" class="header__menu__item__text">Portfolio</a></li>
-        <li class="nav-item header__menu__item"><a href="#contact" class="header__menu__item__text">Contact</a></li>
+        {%- for item in site.data.navigation -%}
+        <li class="nav-item header__menu__item"><a href="{%-if layout.name != 'home'-%}{{site.url}}{%- endif -%}{{item.url}}" class="header__menu__item__text">{{item.label | capitalize}}</a></li>
+        {%- endfor -%}
       </ul>
     </div>
   </div>
