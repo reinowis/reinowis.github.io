@@ -17,3 +17,6 @@ Author: Reino Mai
 
 ## Revision
 V0.1: 01/16/21 
+
+## Download CV
+My latest personal CV could be downloaded directly from: https://github.com/reinowis/reinowis.github.io/raw/master/resources/Mai_Huynh_CV.pdf
