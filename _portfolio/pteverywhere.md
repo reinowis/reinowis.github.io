@@ -1,7 +1,7 @@
 ---
 image: "assets/img/portfolio/5.jpg"
 title: PtEverywhere
-link: https://cameraelectronic.com.au
+link: https://pteverywhere.com
 description: A hydrid web app for managing the private clinics/ 
 technologies: HTML/CSS, JQuery, AngularJS
 platform: app
