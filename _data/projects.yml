@@ -38,7 +38,7 @@
     languages: PHP, HTML/CSS, Jquery
     platform: Wordpress
     note: 'portfolio website for a Vietnamese construction company '
-- image: "assets/img/portfolio/5.png"
+- image: "assets/img/portfolio/6.png"
   title: Etherscan
   link: https://reinowis.github.io/etherscan
   type: web
