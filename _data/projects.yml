@@ -38,3 +38,11 @@
     languages: PHP, HTML/CSS, Jquery
     platform: Wordpress
     note: 'portfolio website for a Vietnamese construction company '
+- image: "assets/img/portfolio/5.png"
+  title: Etherscan
+  link: https://reinowis.github.io/etherscan
+  type: web
+  description:
+    languages: HTML/CSS, Jquery
+    platform: Jekyll
+    note: 'Basic landing page built with Bootstrap'
