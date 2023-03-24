@@ -1,6 +1,15 @@
-- title: Cynopsis
+- title: Discovermarket
   position: Front-end Developer
   duration: now
+  time: 2022
+  description:
+  - Developing frontend for an insurance marketplace.
+  - Working with Angular 13, builing a micro-frontend system using ModuleFederation.
+  - Writing the Unit Tests to improve the quality as well as correctness of the system.
+  - Crafting and improve the UI/ UX (Figma) of the web application.
+- title: Cynopsis
+  position: Front-end Developer
+  duration: 1.8 years
   time: 2021
   description:
   - Developing frontend for a regtech web application, built by Angular 10.
