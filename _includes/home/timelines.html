@@ -19,7 +19,8 @@
                     </div>
                 </div>
                 <div class="timeline__item__content">
-                    <h3 class="timeline__item__title">{{job.position}}</h3>
+                    <h3 class="timeline__item__title">{{job.title}}</h3>
+                    <cite>{{job.position}}</cite>
                     <ul class="timeline__item__description">
                         {%- for detail in job.description -%}
                         <li class="timeline__item__description__item">{{detail}}</li>
