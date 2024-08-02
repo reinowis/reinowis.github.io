@@ -4,7 +4,7 @@ title: Leaptel
 link: https://leaptel.com.au
 description: An e-commerce website for a telecommunication company
 technologies: PHP, HTML/CSS, Wordpress, ReactJS, AlpineJS, Tailwind
-platform: app
+platform: web
 time: 2023 - present
 gallery:
     - "assets/img/portfolio/leaptel-home.png"
