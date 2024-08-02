@@ -19,7 +19,7 @@
 
 			typed.typed({
 				strings: strings,
-				typeSpeed: 100,
+				typeSpeed: 500,
 				loop: true,
 			});
 		});
