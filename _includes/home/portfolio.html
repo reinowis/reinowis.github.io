@@ -18,14 +18,14 @@
         {%- for project in site.portfolio -%}
         <div class="col-lg-4 col-md-6 portfolio-list__item filter-{{project.platform}}">
           <img src="{{ project.image | relative_url }}" class="img-fluid portfolio-list__item__image" alt="">
-          <div class="portfolio-list__item__content">
+          <a class="portfolio-list__item__content" href="{{project.url}}" target="_blank">
             <h3 class="portfolio-list__item__title">{{project.title}}</h4>
-            <a class="portfolio-list__item__link" href="{{project.url}}" target="_blank">
+            <div class="portfolio-list__item__link">
               <span class="portfolio-list__item__link__text" title="More Details">
                 <ion-icon name="link-outline"></ion-icon>
               </span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
         {%- endfor -%}
       </div>
