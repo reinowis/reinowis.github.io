@@ -5,7 +5,7 @@ link: https://pteverywhere.com
 description: A hydrid web app for managing the private clinics/ 
 technologies: HTML/CSS, JQuery, AngularJS
 platform: app
-time: 2019 - present
+time: 2019 - 2021
 gallery:
     - "assets/img/portfolio/pteverywhere-1.jpg"
     - "assets/img/portfolio/pteverywhere-2.jpg"
