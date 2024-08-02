@@ -1,5 +1,5 @@
 ---
-image: "assets/img/portfolio/6.jpg"
+image: "assets/img/portfolio/7.jpg"
 title: Leaptel
 link: https://leaptel.com.au
 description: An e-commerce website for a telecommunication company
