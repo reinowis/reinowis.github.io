@@ -1,6 +1,13 @@
-- title: Discovermarket
+- title: Leaptel
   position: Front-end Developer
   duration: now
+  time: 2023
+  description:
+  - Developing new website, built with Wordpress, ReactJS and AlpineJS.
+  - Developing the new features for the existing internal management website, built with PHP, AlpineJS.
+- title: Discovermarket
+  position: Front-end Developer
+  duration: 6 months
   time: 2022
   description:
   - Developing frontend for an insurance marketplace.
