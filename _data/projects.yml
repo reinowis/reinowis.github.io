@@ -54,3 +54,11 @@
     languages: HTML/CSS, Jquery
     platform: Jekyll
     note: 'Basic landing page built with Bootstrap'
+- image: "assets/img/portfolio/milibri.png"
+  title: Milibri
+  link: https://milibri.io.vn
+  type: web
+  description:
+    languages: PHP, HTML/CSS/JS, Interactiviy API, Notion API
+    platform: Wordpress
+    note: 'a website for a non-profit education project in Ben Tre'
