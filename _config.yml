@@ -2,22 +2,19 @@
 title: Huỳnh (Reino) Mai - a front-end developer
 fullname: Huỳnh (Reino) Mai
 email: maihuynh16995@gmail.com
-phone: (+84) 946 607 797
 description: Huỳnh (Reino) Mai, a front-end developer, based in Ben Tre, Vietnam.
 baseurl: "/"
 url: "https://reinowis.github.io"
 keywords: "front-end, vietnam, developer, ben tre, mekong delta, angularjs, html, css, javascript"
 intro: 
-    highlight: I'm Huỳnh (Reino), a front-end developer based in Ben Tre, Vietnam. I'm passionate about traveling and reading.
-    content: I have been working as a front-end developer for many years, constantly exploring new technologies and embracing fresh challenges every day.
+    highlight: I'm Huỳnh (Reino), a front-end developer based in Ben Tre, Vietnam — passionate about traveling and reading.
+    content: With several years of experience in front-end development, I enjoy crafting clean, responsive user interfaces while staying curious about new technologies. I thrive on solving challenges and continuously growing through each project I take on.
 # Social settings
 social:
     -   label: github
         url: https://github.com/reinowis
     -   label: linkedin
         url: https://www.linkedin.com/in/huynh-reino-mai/
-    -   label: behance
-        url: https://www.behance.net/reinowis
 # Build settings
 markdown: kramdown
 sass:
